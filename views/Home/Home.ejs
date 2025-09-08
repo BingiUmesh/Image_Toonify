@@ -1,0 +1,408 @@
+<%- layout("/layouts/boilerplate.ejs") %>
+<!-- to add layout to home pagen -->
+
+<!-- Hero Section -->
+<section class="hero-gradient py-5">
+  <div class="container">
+    <div class="row align-items-center min-vh-75">
+      <!-- Left Content -->
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <h1 class="hero-title display-4 mb-4">
+          Turn Your Photos<br />
+          Into Stunning<br />
+          Cartoon Styles
+        </h1>
+
+        <a
+          href="/auth/login"
+          class="btn orange-btn text-white btn-lg px-5 py-3 fw-medium"
+        >
+          Get Started
+        </a>
+      </div>
+
+      <!-- Right Content - Demo Images -->
+      <div class="col-lg-6">
+        <div class="row g-3">
+          <!-- Original Photo -->
+          <div class="col-6">
+            <div class="demo-image overflow-hidden">
+              <img
+                src="/Original.jpg"
+                alt="Original photo of a woman"
+                class="img-fluid w-100 h-100 object-fit-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Cartoon Version -->
+          <div class="col-6">
+            <div
+              class="demo-image overflow-hidden"
+              style="background-color: #f4a261"
+            >
+              <img
+                src="/Cartoon.jpg"
+                alt="Cartoon version of the photo"
+                class="img-fluid w-100 h-100 object-fit-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-5 bg-gradient-teal">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="display-4 fw-bold text-dark mb-3">Features</h2>
+        <p class="fs-5 text-secondary">
+          Discover what makes Cartoonify the best AI photo transformation tool
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card feature-card h-100 shadow border-0 text-center p-4">
+          <img
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+            alt="Fast Processing"
+            class="feature-img mb-3"
+          />
+          <h5 class="card-title fw-bold">Lightning Fast Processing</h5>
+          <p class="card-text text-muted">
+            Transform your photos in under 10 seconds with our optimized AI
+            algorithms. No waiting, just instant magic.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card feature-card h-100 shadow border-0 text-center p-4">
+          <img
+            src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29"
+            alt="Art Styles"
+            class="feature-img mb-3"
+          />
+          <h5 class="card-title fw-bold">Multiple Art Styles</h5>
+          <p class="card-text text-muted">
+            Choose from cartoon, anime, sketch, oil painting, watercolor, and
+            more. Each style carefully crafted by AI.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card feature-card h-100 shadow border-0 text-center p-4">
+          <img
+            src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"
+            alt="High Resolution"
+            class="feature-img mb-3"
+          />
+          <h5 class="card-title fw-bold">High Resolution Output</h5>
+          <p class="card-text text-muted">
+            Get crisp, high-quality results perfect for printing, sharing, or
+            professional use. No pixelation, just perfection.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- toonify showcase -->
+  <div class="container py-5">
+    <div class="text-center mb-3">
+      <h2 class="fw-bold">✨ Toonify Showcase</h2>
+      <p class="text-muted">
+        See the magical transformation of everyday moments into charming
+        artistic wonders
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Winter -->
+      <div class="col-lg-4 col-md-3 col-sm-6">
+        <div class="showcase-card shadow">
+          <img
+            src="/image1.png"
+            alt="Winter Romance"
+            style="height: 15rem;"
+          />
+          <div class="overlay">Winter</div>
+        </div>
+      </div>
+
+      <!-- Mountain View -->
+      <div class="col-lg-4 col-md-3 col-sm-6">
+        <div class="showcase-card shadow">
+          <img
+            src="/image2.png"
+            alt="Mountain View"
+            style="height: 15rem;"
+          />
+          <div class="overlay">Mountain View</div>
+        </div>
+      </div>
+
+      <!-- Toonify Cats -->
+      <div class="col-lg-4 col-md-3 col-sm-6">
+        <div class="showcase-card shadow">
+          <img
+            src="/image3.png"
+            alt="Toonify Cats"
+            style="height: 15rem;"
+          />
+          <div class="overlay">Toonify Cats</div>
+        </div>
+      </div>
+
+      <!-- Family Moments -->
+      <div class="col-lg-4 col-md-3 col-sm-6">
+        <div class="showcase-card shadow">
+          <img
+            src="/image4.png"
+            alt="Playful Cats"
+            style="height: 15rem;"
+          />
+          <div class="overlay"> Family Moments</div>
+        </div>
+      </div>
+
+      <!--Work from Home -->
+      <div class="col-lg-4 col-md-3 col-sm-6">
+        <div class="showcase-card shadow">
+          <img
+            src="/image5.png"
+            alt="Business Professional"
+            style="height: 15rem;"
+          />
+          <div class="overlay">Work from Home</div>
+        </div>
+      </div>
+
+      <!-- Friends Group -->
+      <div class="col-lg-4 col-md-3 col-sm-6">
+        <div class="showcase-card shadow">
+          <img
+            src="/image6.png"
+            alt="Fantasy Knight"
+            style="height: 15rem;"
+          />
+          <div class="overlay">Friends Group</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+<section id="about" class="py-5 bg-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left: Image -->
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <img
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f""
+          alt="About Cartoonify"
+          class="img-fluid rounded-3 shadow"
+        />
+      </div>
+
+      <!-- Right: Content -->
+      <div class="col-lg-7">
+        <h2 class="about-title display-5 fw-bold mb-4">About <span class="text-teal">Cartoonify</span></h2>
+        <p class="about-text fs-5 text-muted">
+          <strong>Cartoonify</strong> is an AI-powered web app that transforms your everyday photos 
+          into <span class="fw-semibold text-dark">unique works of art</span>. 
+          Whether you want to look like a <em>cartoon character</em>, an <em>anime hero</em>, 
+          or be painted in <em>dreamy Ghibli style</em>, our tool makes it possible in just seconds.
+        </p>
+
+        <ul class="list-unstyled fs-5 mt-3">
+          <li class="mb-2">
+            <i class="fas fa-magic text-teal me-2"></i> AI-powered filters for instant results
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-image text-teal me-2"></i> Supports pencil sketch, cartoon, anime & more
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-star text-teal me-2"></i> High-resolution output for sharing & printing
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-users text-teal me-2"></i> Loved by creators, artists & casual users alike
+          </li>
+        </ul>
+
+        <p class="about-text fs-5 mt-4">
+          With <span class="fw-bold text-dark">Cartoonify</span>, 
+          you don’t just edit photos — you <span class="text-teal">reimagine yourself</span> 
+          in a world of art, creativity, and fun.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <style>
+    .orange-btn {
+      background-color: #ea580c;
+      transition: all 0.3s ease;
+    }
+
+    .orange-btn:hover {
+      background-color: #dc2626;
+      transform: translateY(-2px);
+    }
+
+    .hero-title {
+      color: #1f2937;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .process-text {
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    .about-title {
+      color: #1f2937;
+      font-weight: 700;
+    }
+
+    .about-text {
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    .demo-image {
+      height: 25rem !important;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-orange-600 {
+      color: #ea580c;
+    }
+
+    /* Hover Overlay Effect */
+    .feature-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-card .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .feature-card:hover .overlay {
+      opacity: 0.1;
+    }
+
+    /* Card hover overlay effect */
+    .showcase-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .showcase-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .showcase-card:hover img {
+      transform: scale(1.08);
+    }
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 12px;
+      text-align: center;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .showcase-card:hover .overlay {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    
+  .feature-img {
+    width: 100px; /* control size */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%; /* makes it circular */
+    margin: 0 auto; /* centers it */
+    display: block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  </style>
+
+  <script>
+    // Add interactive effects to the hero section
+    document.addEventListener("DOMContentLoaded", function () {
+      // Add loading animation to Get Started button
+      const getStartedBtn = document.querySelector(".orange-btn");
+      if (getStartedBtn) {
+        getStartedBtn.addEventListener("click", function (e) {
+          this.innerHTML =
+            '<i class="fas fa-spinner fa-spin me-2"></i>Loading...';
+          // You can add actual navigation logic here
+          setTimeout(() => {
+            this.innerHTML = "Get Started";
+          }, 2000);
+        });
+      }
+
+      // Add subtle animation to demo images on load
+      const demoImages = document.querySelectorAll(".demo-image");
+      demoImages.forEach((img, index) => {
+        img.style.opacity = "0";
+        img.style.transform = "translateY(20px)";
+        setTimeout(() => {
+          img.style.transition = "all 0.6s ease";
+          img.style.opacity = "1";
+          img.style.transform = "translateY(0)";
+        }, 300 + index * 200);
+      });
+    });
+
+    // Add subtle animation to demo images on load
+    const demoImages = document.querySelectorAll(".demo-image");
+    demoImages.forEach((img, index) => {
+      img.style.opacity = "0";
+      img.style.transform = "translateY(20px)";
+      setTimeout(() => {
+        img.style.transition = "all 0.6s ease";
+        img.style.opacity = "1";
+        img.style.transform = "translateY(0)";
+      }, 300 + index * 200);
+    });
+  </script>
+</body>

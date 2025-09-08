@@ -1,0 +1,218 @@
+<% layout('User/user_Boilerplate') -%>
+
+<section class="container mt-5">
+  <h2 class="text-center fw-bold text-primary mb-4">
+    📤 Upload & Convert Image
+  </h2>
+
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+          <!-- Upload Form -->
+          <form
+            action="/<%= user.username %>/upload"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <!-- Title Input -->
+            <div class="mb-4">
+              <label for="title" class="form-label fw-semibold"
+                >Image Title</label
+              >
+              <input
+                type="text"
+                name="title"
+                id="title"
+                class="form-control"
+                placeholder="Enter a title for your image"
+                required
+              />
+            </div>
+
+            <!-- File Upload -->
+            <div class="mb-4">
+              <label for="image" class="form-label fw-semibold"
+                >Select Image</label
+              >
+              <input
+                type="file"
+                name="image"
+                id="image"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <!-- Method Selection -->
+            <div class="mb-4">
+              <label for="method" class="form-label fw-semibold"
+                >Choose Processing Method</label
+              >
+              <select name="method" id="method" class="form-select" required>
+                <option value="manual">🛠️ Manual</option>
+                <option value="ai">🤖 AI</option>
+              </select>
+            </div>
+
+            <!-- Style Selection -->
+            <div class="mb-4">
+              <label for="style" class="form-label fw-semibold"
+                >Choose Style</label
+              >
+              <select name="style" id="style" class="form-select" required>
+                <!-- Options will be filled dynamically -->
+              </select>
+            </div>
+
+            <% if (user.plan === "Free Plan" && user.conversions > 5) { %>
+            <a
+              href="/<%= user.username %>/pricing"
+              class="btn btn-gradient w-100 rounded-pill fw-bold"
+            >
+              Convert
+            </a>
+            <% } else { %>
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="btn btn-gradient w-100 rounded-pill fw-bold"
+            >
+              Convert
+            </button>
+            <% } %>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Show results only if processed image exists -->
+  <% if (outputImage) { %>
+  <div class="row mt-5 justify-content-center">
+    <div class="col-md-10">
+      <h4 class="text-center fw-bold mb-4">🔍 Comparison</h4>
+      <div
+        class="d-flex justify-content-around align-items-center flex-wrap gap-3"
+      >
+        <!-- Original -->
+        <div class="text-center">
+          <h6 class="fw-semibold">Original</h6>
+          <img
+            src="/<%= originalImage %>"
+            class="img-fluid rounded shadow"
+            style="max-width: 300px"
+          />
+        </div>
+        <!-- Processed -->
+        <div class="text-center">
+          <h6 class="fw-semibold">Converted (<%= selectedStyle %>)</h6>
+          <img
+            src="/<%= outputImage %>"
+            class="img-fluid rounded shadow"
+            style="max-width: 300px"
+          />
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="text-center mt-4 d-flex justify-content-center gap-3">
+        <!-- Download Button -->
+        <!-- Download only if paid + not expired -->
+        <% if (user.plan !== "Free Plan" && (!user.planExpiry || new
+        Date(user.planExpiry) > new Date())) { %>
+        <a
+          href="/<%= user.username %>/image/<%= img._id %>/download"
+          class="btn btn-sm btn-outline-success rounded-pill px-3"
+        >
+          ⬇️ Download
+        </a>
+        <% } else { %>
+        <a
+          href="/<%= user.username %>/pricing"
+          class="btn btn-sm btn-warning rounded-pill px-3"
+        >
+          🔒 Upgrade to Download
+        </a>
+        <% } %>
+
+        <!-- Share Button -->
+        <button
+          class="btn btn-gradient rounded-pill fw-bold px-4"
+          onclick="shareImage('<%= outputImage %>')"
+        >
+          📤 Share
+        </button>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</section>
+
+<!-- Share Script -->
+<script>
+  function shareImage(imagePath) {
+    const fullUrl = window.location.origin + "/" + imagePath;
+
+    if (navigator.share) {
+      navigator.share({
+        title: "Check out my converted image!",
+        text: "Here’s my image in a new style:",
+        url: fullUrl,
+      });
+    } else {
+      navigator.clipboard.writeText(fullUrl);
+      alert("🔗 Link copied to clipboard!");
+    }
+  }
+
+  // Dynamic styles based on method
+  const methodSelect = document.getElementById("method");
+  const styleSelect = document.getElementById("style");
+
+  const styles = {
+    manual: [
+      { value: "pencil", text: "✏️ Pencil Sketch" },
+      { value: "cartoon", text: "🎨 Cartoon" },
+      { value: "grayscale", text: "🖤 Grayscale" },
+      { value: "sketch", text: "🖌️ Sketch Art" },
+      { value: "ghibli", text: "🌸 Ghibli Style" },
+    ],
+    ai: [
+      { value: "cartoon", text: "🎨 Cartoon" },
+      { value: "ghibli", text: "🌸 Ghibli Style" },
+      { value: "custom", text: "✨ Custom" },
+      { value: "dreamy", text: "🌙 Dreamy" },
+    ],
+  };
+
+  function updateStyleOptions(method) {
+    styleSelect.innerHTML = "";
+    styles[method].forEach((opt) => {
+      const option = document.createElement("option");
+      option.value = opt.value;
+      option.textContent = opt.text;
+      styleSelect.appendChild(option);
+    });
+  }
+
+  // Initialize with default
+  updateStyleOptions(methodSelect.value);
+
+  methodSelect.addEventListener("change", (e) => {
+    updateStyleOptions(e.target.value);
+  });
+</script>
+
+<style>
+  .btn-gradient {
+    background: linear-gradient(90deg, #4e73df, #1cc88a);
+    border: none;
+    color: white;
+    transition: 0.3s ease-in-out;
+  }
+  .btn-gradient:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+</style>
