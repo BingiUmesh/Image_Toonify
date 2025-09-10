@@ -213,6 +213,7 @@ router.post(
           outputImage: `processed/${processedFileName}`,
           selectedStyle: style,
           activePage: "upload",
+          img: newImage,
         });
       }
     );
