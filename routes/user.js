@@ -147,8 +147,8 @@ router.post(
     // Select Python script
     const pythonScript =
       method === "ai"
-        ? path.join(__dirname, "../python/processAI.py")
-        : path.join(__dirname, "../python/processImage.py");
+        ? path.join(__dirname, "../Python/processAI.py")
+        : path.join(__dirname, "../Python/processImage.py");
 
     // Automatically decide AI model based on style
     let modelArg = "";
