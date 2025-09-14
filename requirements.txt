@@ -4,8 +4,8 @@ Pillow
 opencv-python
 
 # PyTorch CPU-only (no CUDA)
-torch==2.3.0+cpu
-torchvision==0.18.0+cpu
+torch==2.8.0+cpu
+torchvision==0.23.0+cpu
 --extra-index-url https://download.pytorch.org/whl/cpu
 
 # ONNX runtime for AnimeGANv3
