@@ -63,7 +63,7 @@ router.get(
     const user = await User.findById(req.user._id);
     if (!user) return res.status(404).send("❌ User not found");
 
-    res.render("User/profile.ejs", { user, activePage: "profile" });
+    res.render("User/Profile.ejs", { user, activePage: "profile" });
   })
 );
 
@@ -317,7 +317,7 @@ router.get(
 
     const images = await Image.find({ uploadedBy: user._id });
 
-    res.render("User/toonifiedImages.ejs", {
+    res.render("User/ToonifiedImages.ejs", {
       user,
       images,
       activePage: "toonifiedImages",
@@ -384,7 +384,7 @@ router.get(
     const user = await User.findOne({ username });
     if (!user) return res.status(404).send("❌ User not found");
 
-    res.render("User/settings.ejs", { user, activePage: "settings" });
+    res.render("User/Settings.ejs", { user, activePage: "settings" });
   })
 );
 

@@ -8,7 +8,7 @@ const User = require("../models/users");
 router
   .route("/register")
   .get((req, res) => {
-    res.render("auth/register.ejs");
+    res.render("auth/Register.ejs");
   })
   .post(
     wrapAsync(async (req, res) => {
@@ -39,7 +39,7 @@ router
 router
   .route("/login")
   .get((req, res) => {
-    res.render("auth/login.ejs");
+    res.render("auth/Login.ejs");
   })
   .post(
     saveRedirectUrl,
