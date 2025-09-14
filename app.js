@@ -49,7 +49,7 @@ async function main() {
 }
 
 const sessionOptions = {
-  secret: "mysupersecretcode",
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   cookie: {
@@ -92,5 +92,5 @@ app.use("/payment", paymentRouter);
 app.use("/:username", userRouter);
 
 app.listen(port, () => {
-  console.log("Server is running at port 3000");
+  console.log(`Server is running at port ${port}`);
 });
