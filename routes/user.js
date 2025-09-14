@@ -170,7 +170,8 @@ router.post(
 
     // Execute Python script
     execFile(
-      "C:/Users/BINGI UMESH/AppData/Local/Programs/Python/Python313/python.exe",
+      // "C:/Users/BINGI UMESH/AppData/Local/Programs/Python/Python313/python.exe",
+      "python3",
       args,
       async (err, stdout, stderr) => {
         console.log("Python Stdout:", stdout);
